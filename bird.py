@@ -81,10 +81,14 @@ class Idle:
     @staticmethod
     def draw(bird):
         if bird.face_dir == 1:
-            bird.image.clip_draw(int(bird.frame) * 180, bird.action * 166, 180, 166, bird.x, bird.y)
+            for i in range(10):
+                bird.image.clip_draw(int(bird.frame) * 180, bird.action * 166, 180, 166, bird.x-i*10, bird.y-i*10)
+
         else:
-            bird.image.clip_composite_draw(int(bird.frame) * 180, bird.action * 166, 180, 166, 0, 'h', bird.x, bird.y,
+            for i in range(10):
+                bird.image.clip_composite_draw(int(bird.frame) * 180, bird.action * 166, 180, 166, 0, 'h', bird.x-i*10, bird.y-i*10,
                                            180, 166)
+
 
 
 
@@ -111,9 +115,11 @@ class Run:
     @staticmethod
     def draw(bird):
         if bird.face_dir == 1:
-            bird.image.clip_draw(int(bird.frame) * 180, bird.action * 166, 180, 166, bird.x, bird.y)
+            for i in range(10):
+                bird.image.clip_draw(int(bird.frame) * 180, bird.action * 166, 180, 166, bird.x-i*10, bird.y-i*10)
         else:
-            bird.image.clip_composite_draw(int(bird.frame) * 180, bird.action * 166, 180, 166, 0, 'h', bird.x, bird.y,180,166)
+            for i in range(10):
+                bird.image.clip_composite_draw(int(bird.frame) * 180, bird.action * 166, 180, 166, 0, 'h', bird.x-i*10, bird.y-i*10,180,166)
 
 class StateMachine:
     def __init__(self, bird):
